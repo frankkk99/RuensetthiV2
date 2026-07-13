@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<script>
+  // ตั้งค่าธีมก่อน paint เพื่อไม่ให้เกิดการกระพริบสีผิด
+  (function(){
+    try{
+      var t = localStorage.getItem('ruensetthi-theme');
+      if(!t){ t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'; }
+      document.documentElement.setAttribute('data-theme', t);
+    }catch(e){}
+  })();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>เรือนเศรษฐีนวดเพื่อสุขภาพ | นวดแผนไทยแท้ นครราชสีมา (โคราช) 2 สาขา</title>
+<meta name="description" content="เรือนเศรษฐีนวดเพื่อสุขภาพ ร้านนวดแผนไทยแท้ ย่านบ้านใหม่ ใกล้เซฟวันโคราช จังหวัดนครราชสีมา เปิดให้บริการมายาวนาน 2 สาขา บริการนวดแผนไทย นวดน้ำมัน นวดเท้า ประคบสมุนไพร โดยหมอนวดมืออาชีพ">
+<meta name="keywords" content="นวดโคราช, นวดแผนไทยนครราชสีมา, ร้านนวดบ้านใหม่, นวดใกล้เซฟวันโคราช, เรือนเศรษฐีนวดเพื่อสุขภาพ, นวดเพื่อสุขภาพโคราช">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://ruensetthi-massage.example.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="business.business">
+<meta property="og:title" content="เรือนเศรษฐีนวดเพื่อสุขภาพ | นวดแผนไทยแท้ นครราชสีมา">
+<meta property="og:description" content="ร้านนวดแผนไทยแท้ เปิดมายาวนาน 2 สาขาในนครราชสีมา ย่านบ้านใหม่ ใกล้เซฟวันโคราช บริการโดยหมอนวดมืออาชีพ บรรยากาศอบอุ่น สงบ เป็นกันเอง">
+<meta property="og:locale" content="th_TH">
+<meta property="og:url" content="https://ruensetthi-massage.example.com/">
+<meta property="og:site_name" content="เรือนเศรษฐีนวดเพื่อสุขภาพ">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- JSON-LD structured data: helps Google + AI assistants understand and recommend this business -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  "name": "เรือนเศรษฐีนวดเพื่อสุขภาพ",
+  "alternateName": "Ruen Setthi Massage for Health",
+  "description": "ร้านนวดแผนไทยเพื่อสุขภาพ เปิดให้บริการมายาวนาน ในจังหวัดนครราชสีมา ให้บริการนวดแผนไทย นวดน้ำมัน นวดเท้า และประคบสมุนไพร โดยหมอนวดมืออาชีพ",
+  "image": "https://ruensetthi-massage.example.com/images/storefront.jpg",
+  "priceRange": "฿฿",
+  "telephone": "+66-44-000-000",
+  "url": "https://ruensetthi-massage.example.com/",
+  "servesCuisine": null,
+  "department": [
+    {
+      "@type": "HealthAndBeautyBusiness",
+      "name": "เรือนเศรษฐีนวดเพื่อสุขภาพ สาขาบ้านใหม่ (ใกล้เซฟวันโคราช)",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "[ที่อยู่ตัวอย่าง เลขที่ xx ถนน...] ใกล้เซฟวันโคราช",
+        "addressLocality": "ตำบลบ้านใหม่ อำเภอเมืองนครราชสีมา",
+        "addressRegion": "นครราชสีมา",
+        "postalCode": "30000",
+        "addressCountry": "TH"
+      },
+      "telephone": "+66-44-000-001",
+      "openingHours": "Mo-Su 10:00-22:00"
+    },
+    {
+      "@type": "HealthAndBeautyBusiness",
+      "name": "เรือนเศรษฐีนวดเพื่อสุขภาพ สาขา 2 (ตัวอย่าง)",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "[ที่อยู่ตัวอย่าง สาขา 2]",
+        "addressLocality": "อำเภอเมืองนครราชสีมา",
+        "addressRegion": "นครราชสีมา",
+        "postalCode": "30000",
+        "addressCountry": "TH"
+      },
+      "telephone": "+66-44-000-002",
+      "openingHours": "Mo-Su 10:00-22:00"
+    }
+  ]
+}
+</script>
+
+<style>
+  :root, [data-theme="dark"]{
+    --bg: #1c130d;
+    --bg-deep: #150e09;
+    --card: #2a1c13;
+    --card-line: rgba(201,162,75,0.22);
+    --gold: #c9a24b;
+    --gold-light: #e9ce8c;
+    --gold-soft: rgba(201,162,75,0.55);
+    --ivory: #f2e7d5;
+    --ivory-dim: #cdbba0;
+    --brown-mid: #6b4226;
+    --header-bg: rgba(28,19,13,0.92);
+    --hero-fade-top: rgba(21,14,9,0.55);
+    --hero-fade-bottom: rgba(21,14,9,0.75);
+    --maxw: 1120px;
+  }
+  /* โทนสว่าง — แรงบันดาลใจจากกระดาษสาและใบลานย้อมสี ทองเปลว บนพื้นครีมอบอุ่นแบบเรือนไทย */
+  [data-theme="light"]{
+    --bg: #f6efdf;
+    --bg-deep: #efe3c9;
+    --card: #fffbf2;
+    --card-line: rgba(122,79,32,0.22);
+    --gold: #9c6f22;
+    --gold-light: #7a4f18;
+    --gold-soft: rgba(156,111,34,0.45);
+    --ivory: #3a2515;
+    --ivory-dim: #6b5540;
+    --brown-mid: #c9a463;
+    --header-bg: rgba(246,239,223,0.92);
+    --hero-fade-top: rgba(58,37,21,0.45);
+    --hero-fade-bottom: rgba(58,37,21,0.72);
+  }
+  /* คงที่ไม่เปลี่ยนตามธีม — ใช้เฉพาะใน hero เพราะพื้นหลังเป็นภาพเข้มเสมอทั้ง 2 โหมด */
+  :root{
+    --hero-title: #f2e7d5;
+    --hero-accent: #e9ce8c;
+    --hero-lead: #cdbba0;
+    --hero-line: rgba(255,255,255,0.22);
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background: var(--bg);
+    color: var(--ivory);
+    font-family:'Noto Sans Thai', sans-serif;
+    font-weight:300;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+    transition: background-color .35s ease, color .35s ease;
+  }
+  section, .card, .service-card, .branch-card, .service-img, footer{
+    transition: background-color .35s ease, border-color .35s ease;
+  }
+
+  /* theme toggle */
+  .theme-toggle{
+    position:relative; width:52px; height:28px; border-radius:20px;
+    border:1px solid var(--card-line); background: var(--card);
+    cursor:pointer; flex-shrink:0; padding:0;
+  }
+  .theme-toggle .knob{
+    position:absolute; top:2px; left:2px; width:22px; height:22px; border-radius:50%;
+    background: var(--gold); display:flex; align-items:center; justify-content:center;
+    transition: transform .3s ease, background-color .3s ease;
+    color: var(--bg);
+  }
+  [data-theme="light"] .theme-toggle .knob{ transform: translateX(24px); }
+  .theme-toggle .knob svg{ width:13px; height:13px; }
+  .theme-toggle .ti-sun{ display:none; }
+  .theme-toggle .ti-moon{ display:block; }
+  [data-theme="light"] .theme-toggle .ti-sun{ display:block; }
+  [data-theme="light"] .theme-toggle .ti-moon{ display:none; }
+  h1,h2,h3,.display{
+    font-family:'Noto Serif Thai', serif;
+    font-weight:600;
+    color: var(--gold-light);
+    letter-spacing:0.01em;
+  }
+  a{ color:inherit; text-decoration:none; }
+  img{ max-width:100%; display:block; }
+  .wrap{ max-width: var(--maxw); margin:0 auto; padding:0 28px; }
+  ::selection{ background: var(--gold); color:#1c130d; }
+
+  /* dummy content notice */
+  .dummy-banner{
+    background: #3a2412;
+    color: var(--gold-light);
+    text-align:center;
+    font-size:13px;
+    padding:9px 16px;
+    letter-spacing:0.03em;
+    border-bottom:1px solid var(--card-line);
+  }
+
+  /* ornamental divider - signature element */
+  .kranok{
+    display:flex; align-items:center; justify-content:center;
+    gap:18px; margin: 0 auto; width:100%;
+    color: var(--gold-soft);
+  }
+  .kranok svg{ height:22px; width:auto; flex-shrink:0; }
+  .kranok .line{ flex:1; max-width:180px; height:1px; background: linear-gradient(90deg, transparent, var(--gold-soft), transparent); }
+
+  /* image treatment — unifies placeholder stock photos into the brown-gold palette */
+  .ph-img{ position:relative; overflow:hidden; background: var(--card); }
+  .ph-img img{
+    width:100%; height:100%; object-fit:cover; display:block;
+    filter: sepia(0.38) saturate(1.25) hue-rotate(-8deg) brightness(0.82) contrast(1.08);
+    transition: transform .6s ease, filter .4s ease;
+  }
+  .ph-img::after{
+    content:''; position:absolute; inset:0;
+    background: linear-gradient(180deg, rgba(28,19,13,0) 40%, rgba(20,13,8,0.55));
+    pointer-events:none;
+  }
+  .ph-img .ph-tag{
+    position:absolute; left:12px; bottom:10px; z-index:2;
+    font-size:10px; letter-spacing:0.06em; color: var(--gold-light);
+    background: rgba(20,13,8,0.55); border:1px solid var(--gold-soft);
+    padding:3px 9px; border-radius:2px; backdrop-filter: blur(2px);
+  }
+  .ph-img:hover img{ transform: scale(1.05); }
+
+  /* header */
+  header{
+    position:sticky; top:0; z-index:50;
+    background: var(--header-bg);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--card-line);
+    transition: background-color .3s ease, border-color .3s ease;
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 28px; max-width: var(--maxw); margin:0 auto;
+  }
+  .brand{ display:flex; align-items:center; gap:12px; }
+  .brand-mark{ width:34px; height:34px; }
+  .brand-name{ font-family:'Noto Serif Thai', serif; font-size:17px; font-weight:600; color:var(--gold-light); }
+  .brand-sub{ font-size:11px; color: var(--ivory-dim); letter-spacing:0.08em; }
+  nav.links{ display:flex; gap:32px; font-size:14px; }
+  nav.links a{ color: var(--ivory-dim); transition: color .25s; position:relative; }
+  nav.links a:hover, nav.links a:focus-visible{ color: var(--gold-light); }
+  .nav-cta{
+    border:1px solid var(--gold-soft); color:var(--gold-light) !important;
+    padding:9px 18px; border-radius:2px; font-size:13px;
+  }
+  .nav-cta:hover{ background: var(--gold); color:#1c130d !important; }
+  .menu-toggle{ display:none; background:none; border:none; color:var(--gold-light); font-size:24px; cursor:pointer; }
+
+  /* hero */
+  .hero{
+    position:relative; padding: 150px 28px 100px;
+    text-align:center; overflow:hidden;
+    min-height: 640px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .hero-bg{ position:absolute; inset:0; z-index:0; }
+  .hero-bg img{
+    width:100%; height:100%; object-fit:cover;
+    filter: sepia(0.5) saturate(1.2) hue-rotate(-8deg) brightness(0.5) contrast(1.05);
+  }
+  .hero-bg::after{
+    content:''; position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse at 50% -10%, rgba(201,162,75,0.18), transparent 55%),
+      linear-gradient(180deg, var(--hero-fade-top) 0%, var(--hero-fade-bottom) 55%, var(--bg) 100%);
+  }
+  .hero-inner{ position:relative; z-index:1; width:100%; }
+  .hero-eyebrow{
+    color: var(--hero-accent); font-size:13px; letter-spacing:0.25em; text-transform:uppercase;
+    margin-bottom:22px; display:inline-block;
+  }
+  .hero h1{
+    line-height:1.28; color: var(--hero-title);
+    max-width:820px; margin: 0 auto 22px;
+    word-break: keep-all; overflow-wrap: normal;
+  }
+  .hero h1 .h1-name{
+    display:inline-block; font-size: clamp(30px, 8.5vw, 58px);
+  }
+  .hero h1 .h1-sub{
+    display:inline-block; font-size: clamp(22px, 6vw, 42px);
+  }
+  .hero h1 .h1-tag{
+    display:inline-block; font-size: clamp(14px, 3.6vw, 22px);
+    font-weight:500; color: var(--hero-accent);
+    letter-spacing:0.01em; margin-top:10px;
+  }
+  .hero p.lead{
+    color: var(--hero-lead); font-size:17px; max-width:560px; margin:0 auto 40px;
+  }
+  .hero-actions{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:56px;}
+  .btn{
+    padding:14px 30px; border-radius:2px; font-size:14px; letter-spacing:0.02em;
+    transition: all .25s ease; display:inline-block;
+  }
+  .btn-primary{ background: var(--gold); color:#1c130d; }
+  .btn-primary:hover{ background: var(--gold-light); transform: translateY(-1px); }
+  .btn-ghost{ border:1px solid var(--card-line); color: var(--ivory); }
+  .btn-ghost:hover{ border-color: var(--gold-soft); color: var(--gold-light); }
+  .hero .btn-ghost{ border:1px solid var(--hero-line); color: var(--hero-title); }
+  .hero .btn-ghost:hover{ border-color: var(--hero-accent); color: var(--hero-accent); }
+
+  .hero-stats{
+    display:flex; justify-content:center; gap:60px; flex-wrap:wrap;
+    padding-top:44px; border-top:1px solid var(--hero-line);
+    max-width:640px; margin:0 auto;
+  }
+  .stat-num{ font-family:'Noto Serif Thai', serif; font-size:30px; color:var(--hero-accent); }
+  .stat-label{ font-size:12px; color:var(--hero-lead); letter-spacing:0.06em; margin-top:4px; }
+
+  /* section shell */
+  section{ padding: 96px 0; }
+  .section-head{ text-align:center; margin-bottom:64px; }
+  .section-head .kranok{ margin-bottom:22px; }
+  .section-eyebrow{ color:var(--gold); font-size:12px; letter-spacing:0.22em; text-transform:uppercase; }
+  .section-head h2{ font-size: clamp(26px, 3.6vw, 38px); margin-top:14px; }
+  .section-head p{ color:var(--ivory-dim); max-width:520px; margin:14px auto 0; font-size:15px; }
+
+  /* about */
+  .about-grid{
+    display:grid; grid-template-columns: 1.1fr 0.9fr; gap:64px; align-items:center;
+  }
+  .about-img{
+    aspect-ratio: 4/5; border-radius:2px;
+    border:1px solid var(--card-line);
+    position:relative;
+  }
+  .about-img::before{
+    content:''; position:absolute; inset:14px; border:1px solid var(--gold-soft); pointer-events:none; z-index:2;
+  }
+  .about h3.eyebrow{ font-size:12px; letter-spacing:0.22em; color:var(--gold); text-transform:uppercase; margin-bottom:16px; font-family:'Noto Sans Thai'; font-weight:600;}
+  .about h2{ font-size: clamp(24px,3vw,32px); margin-bottom:22px; }
+  .about p{ color:var(--ivory-dim); margin-bottom:16px; font-size:15px; }
+  .about-list{ margin-top:28px; display:grid; gap:14px; }
+  .about-list li{ list-style:none; display:flex; gap:12px; color:var(--ivory); font-size:14px; align-items:flex-start;}
+  .about-list li svg{ flex-shrink:0; margin-top:3px; }
+
+  /* gallery */
+  .gallery-grid{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 130px;
+    gap:10px;
+  }
+  .gallery-grid .ph-img{ border:1px solid var(--card-line); border-radius:2px; }
+  .gallery-grid .g-tall{ grid-row: span 2; }
+  .gallery-grid .g-wide{ grid-column: span 2; }
+
+  /* services */
+  .services{ background: var(--bg-deep); border-top:1px solid var(--card-line); border-bottom:1px solid var(--card-line); }
+  .service-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:1px; background: var(--card-line); border:1px solid var(--card-line); }
+  .service-card{ background: var(--bg-deep); }
+  .service-card .service-img{ aspect-ratio: 4/3; border-bottom:1px solid var(--card-line); }
+  .service-card .service-body{ padding:26px 28px 30px; }
+  .service-card h3{ font-size:19px; margin-bottom:10px; }
+  .service-card p{ color:var(--ivory-dim); font-size:14px; margin-bottom:20px; min-height:44px;}
+  .service-price{ display:flex; justify-content:space-between; align-items:baseline; border-top:1px dashed var(--card-line); padding-top:14px; }
+  .service-price .dur{ font-size:12px; color:var(--ivory-dim); }
+  .service-price .price{ font-family:'Noto Serif Thai', serif; color:var(--gold-light); font-size:20px; }
+  .price-note{ text-align:center; color:var(--ivory-dim); font-size:12px; margin-top:28px; }
+
+  /* branches */
+  .branch-grid{ display:grid; grid-template-columns: 1fr 1fr; gap:32px; }
+  .branch-card{
+    background: var(--card); border:1px solid var(--card-line); padding:36px;
+    position:relative;
+  }
+  .branch-tag{
+    display:inline-block; font-size:11px; letter-spacing:0.12em; color:var(--gold);
+    border:1px solid var(--gold-soft); padding:4px 12px; margin-bottom:18px; text-transform:uppercase;
+  }
+  .branch-card h3{ font-size:21px; margin-bottom:16px; }
+  .branch-info{ display:grid; gap:12px; font-size:14px; color:var(--ivory-dim); margin-bottom:24px;}
+  .branch-info div{ display:flex; gap:10px; }
+  .branch-info svg{ flex-shrink:0; margin-top:2px; color:var(--gold); }
+  .branch-photo{ aspect-ratio:16/10; border:1px solid var(--card-line); margin-bottom:14px; }
+  .branch-map{
+    aspect-ratio:16/6; background: linear-gradient(135deg, #241811, #1a110b);
+    border:1px solid var(--card-line); display:flex; align-items:center; justify-content:center;
+    color:var(--ivory-dim); font-size:12px; letter-spacing:0.04em;
+  }
+
+  /* testimonials */
+  .testi{ background: var(--bg-deep); border-top:1px solid var(--card-line); border-bottom:1px solid var(--card-line); }
+  .testi-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap:28px; }
+  .testi-card{ padding:8px; }
+  .testi-stars{ color:var(--gold); font-size:14px; letter-spacing:2px; margin-bottom:16px; }
+  .testi-quote{ color:var(--ivory); font-size:15px; margin-bottom:18px; font-style:normal; }
+  .testi-who{ font-size:13px; color:var(--ivory-dim); display:flex; align-items:center; gap:10px; }
+  .testi-avatar{ width:34px; height:34px; border-radius:50%; background: var(--brown-mid); display:flex; align-items:center; justify-content:center; font-family:'Noto Serif Thai'; color:var(--gold-light); font-size:13px;}
+
+  /* CTA band */
+  .cta-band{ text-align:center; padding: 90px 28px; }
+  .cta-band h2{ font-size: clamp(26px,3.6vw,36px); margin-bottom:18px; }
+  .cta-band p{ color:var(--ivory-dim); max-width:480px; margin:0 auto 34px; }
+
+  /* footer */
+  footer{ background: var(--bg-deep); border-top:1px solid var(--card-line); padding:64px 0 28px; }
+  .foot-grid{ display:grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap:40px; margin-bottom:48px; }
+  .foot-brand .brand-name{ font-size:19px; }
+  .foot-brand p{ color:var(--ivory-dim); font-size:13px; margin-top:14px; max-width:260px; }
+  .foot-col h4{ font-family:'Noto Sans Thai'; font-weight:600; color:var(--gold-light); font-size:13px; letter-spacing:0.06em; margin-bottom:18px; text-transform:uppercase;}
+  .foot-col ul{ list-style:none; display:grid; gap:11px; }
+  .foot-col a{ color:var(--ivory-dim); font-size:14px; }
+  .foot-col a:hover{ color:var(--gold-light); }
+  .foot-bottom{ border-top:1px solid var(--card-line); padding-top:24px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:12px; color:var(--ivory-dim); }
+
+  @media (max-width: 900px){
+    .about-grid, .branch-grid{ grid-template-columns:1fr; }
+    .service-grid, .testi-grid{ grid-template-columns:1fr; }
+    .foot-grid{ grid-template-columns:1fr 1fr; }
+    nav.links{ display:none; }
+    .menu-toggle{ display:block; }
+    .hero-stats{ gap:34px; }
+    .hero{ min-height:560px; padding:130px 20px 80px; }
+    .gallery-grid{ grid-template-columns: repeat(2, 1fr); grid-auto-rows:120px; }
+    .about-img{ aspect-ratio:16/11; }
+  }
+
+  @media (max-width: 480px){
+    .wrap{ padding:0 18px; }
+    .hero{ min-height:520px; padding:120px 16px 70px; }
+    .hero-stats{ gap:22px; }
+    .gallery-grid{ grid-template-columns: repeat(2, 1fr); grid-auto-rows:100px; gap:6px; }
+    .service-card .service-img{ aspect-ratio:16/10; }
+    .branch-card{ padding:24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="dummy-banner">⚠ ตัวอย่างเว็บไซต์ — ข้อมูล ที่อยู่ เบอร์โทร ราคา และ<strong>รูปภาพทุกรูปเป็นภาพสต็อกชั่วคราว</strong> รอเปลี่ยนเป็นภาพถ่ายจริงจากหน้าร้านทั้ง 2 สาขา</div>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <svg style="color:var(--gold)" class="brand-mark" viewBox="0 0 40 40" fill="none">
+        <circle cx="20" cy="20" r="19" stroke="currentColor" stroke-width="1"/>
+        <path d="M20 10c-4 4-7 6-7 11a7 7 0 0014 0c0-5-3-7-7-11z" stroke="currentColor" stroke-width="1.2" fill="none"/>
+        <circle cx="20" cy="24" r="2" fill="currentColor"/>
+      </svg>
+      <div>
+        <div class="brand-name">เรือนเศรษฐี</div>
+        <div class="brand-sub">นวดเพื่อสุขภาพ</div>
+      </div>
+    </div>
+    <nav class="links">
+      <a href="#about">เกี่ยวกับเรา</a>
+      <a href="#gallery">ภาพบรรยากาศ</a>
+      <a href="#services">บริการ</a>
+      <a href="#branches">สาขา</a>
+      <a href="#reviews">รีวิว</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:16px;">
+      <button class="theme-toggle" id="themeToggle" aria-label="สลับโหมดมืด/สว่าง" title="สลับโหมดมืด/สว่าง">
+        <span class="knob">
+          <svg class="ti-moon" viewBox="0 0 24 24" fill="none"><path d="M20 14.5A8.5 8.5 0 019.5 4 8.5 8.5 0 1020 14.5z" fill="currentColor"/></svg>
+          <svg class="ti-sun" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </span>
+      </button>
+      <a class="nav-cta" href="tel:+6644000000">โทรจองคิว</a>
+      <button class="menu-toggle" aria-label="เมนู">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="https://picsum.photos/seed/ruensetthi-hero/1800/1100" alt="บรรยากาศเรือนเศรษฐีนวดเพื่อสุขภาพ (ภาพตัวอย่าง)" loading="eager">
+    </div>
+    <div class="wrap hero-inner">
+      <span class="hero-eyebrow">นครราชสีมา · ย่านบ้านใหม่ · ใกล้เซฟวันโคราช</span>
+      <h1>
+        <span class="h1-name">เรือนเศรษฐี</span><br>
+        <span class="h1-sub">นวดเพื่อสุขภาพ</span><br>
+        <span class="h1-tag">สืบสานภูมิปัญญาการนวดแผนไทยแท้</span>
+      </h1>
+      <p class="lead">ร้านนวดเพื่อสุขภาพที่เปิดให้บริการชาวโคราชมายาวนาน ด้วยหมอนวดฝีมือดี บรรยากาศอบอุ่นแบบเรือนไทย เพื่อการพักผ่อนอย่างแท้จริง</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#branches">ดูสาขาใกล้ฉัน</a>
+        <a class="btn btn-ghost" href="#services">ดูราคาบริการ</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">15+</div>
+          <div class="stat-label">ปีที่ให้บริการ (ตัวอย่าง)</div>
+        </div>
+        <div>
+          <div class="stat-num">2</div>
+          <div class="stat-label">สาขาในโคราช</div>
+        </div>
+        <div>
+          <div class="stat-num">4.8</div>
+          <div class="stat-label">คะแนนรีวิวเฉลี่ย (ตัวอย่าง)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap about-grid">
+      <div class="about-img ph-img">
+        <img src="https://picsum.photos/seed/ruensetthi-about/900/1100" alt="บรรยากาศภายในร้าน เรือนเศรษฐีนวดเพื่อสุขภาพ (ภาพตัวอย่าง)" loading="lazy">
+        <span class="ph-tag">ภาพตัวอย่าง — รอรูปจริง</span>
+      </div>
+      <div class="about">
+        <h3 class="eyebrow">เรื่องราวของเรา</h3>
+        <h2>เรือนไทยที่เปิดต้อนรับมาอย่างยาวนาน</h2>
+        <p>เรือนเศรษฐีนวดเพื่อสุขภาพ ก่อตั้งขึ้นจากความตั้งใจของครอบครัวที่รักในศาสตร์การนวดแผนไทย มุ่งมั่นส่งต่อการผ่อนคลายที่แท้จริงให้แก่ชาวโคราชและนักเดินทางที่แวะเวียนมาเยือน <em>(ข้อความตัวอย่าง — รอเรื่องราวจริงของร้าน)</em></p>
+        <p>ทุกขั้นตอนการนวดผ่านการฝึกฝนจากหมอนวดที่มีประสบการณ์ ใส่ใจในรายละเอียด เพื่อให้ลูกค้าทุกท่านได้รับประสบการณ์ที่สงบ ปลอดภัย และคุ้มค่าที่สุด</p>
+        <ul class="about-list">
+          <li><svg style="color:var(--gold)" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9.5l4 4 8-9" stroke="currentColor" stroke-width="1.6"/></svg> หมอนวดผ่านการอบรมและมีใบรับรอง</li>
+          <li><svg style="color:var(--gold)" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9.5l4 4 8-9" stroke="currentColor" stroke-width="1.6"/></svg> ผลิตภัณฑ์และสมุนไพรคัดสรรอย่างดี</li>
+          <li><svg style="color:var(--gold)" width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 9.5l4 4 8-9" stroke="currentColor" stroke-width="1.6"/></svg> บรรยากาศเงียบสงบ เป็นส่วนตัว</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kranok">
+          <span class="line"></span>
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 3c-5 5-9 7-9 13a9 9 0 0018 0c0-6-4-8-9-13z" stroke="currentColor" stroke-width="1"/></svg>
+          <span class="line"></span>
+        </div>
+        <span class="section-eyebrow">บรรยากาศร้าน</span>
+        <h2>ภาพบรรยากาศ เรือนเศรษฐี</h2>
+        <p>ภาพตัวอย่างเพื่อให้เห็นโทนและบรรยากาศ รอชุดภาพถ่ายจริงจากหน้าร้านทั้ง 2 สาขา</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="ph-img g-tall"><img src="https://picsum.photos/seed/ruensetthi-g1/500/900" alt="บรรยากาศห้องนวด (ภาพตัวอย่าง)" loading="lazy"></div>
+        <div class="ph-img g-wide"><img src="https://picsum.photos/seed/ruensetthi-g2/900/500" alt="โต๊ะรับรองลูกค้า (ภาพตัวอย่าง)" loading="lazy"></div>
+        <div class="ph-img"><img src="https://picsum.photos/seed/ruensetthi-g3/500/500" alt="อุปกรณ์นวดสมุนไพร (ภาพตัวอย่าง)" loading="lazy"></div>
+        <div class="ph-img"><img src="https://picsum.photos/seed/ruensetthi-g4/500/500" alt="มุมพักผ่อนก่อนนวด (ภาพตัวอย่าง)" loading="lazy"></div>
+        <div class="ph-img"><img src="https://picsum.photos/seed/ruensetthi-g5/500/500" alt="ทางเข้าร้าน (ภาพตัวอย่าง)" loading="lazy"></div>
+        <div class="ph-img g-tall"><img src="https://picsum.photos/seed/ruensetthi-g6/500/900" alt="พนักงานนวดกำลังบริการ (ภาพตัวอย่าง)" loading="lazy"></div>
+        <div class="ph-img g-wide"><img src="https://picsum.photos/seed/ruensetthi-g7/900/500" alt="สมุนไพรและลูกประคบ (ภาพตัวอย่าง)" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kranok">
+          <span class="line"></span>
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 3c-5 5-9 7-9 13a9 9 0 0018 0c0-6-4-8-9-13z" stroke="currentColor" stroke-width="1"/></svg>
+          <span class="line"></span>
+        </div>
+        <span class="section-eyebrow">บริการของเรา</span>
+        <h2>รายการนวดและราคา</h2>
+        <p>ราคาด้านล่างเป็นข้อมูลตัวอย่างเบื้องต้น รอปรับปรุงเป็นราคาจริงของร้าน</p>
+      </div>
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-img ph-img"><img src="https://picsum.photos/seed/ruensetthi-svc1/600/450" alt="นวดแผนไทยโบราณ (ภาพตัวอย่าง)" loading="lazy"></div>
+          <div class="service-body">
+            <h3>นวดแผนไทยโบราณ</h3>
+            <p>คลายกล้ามเนื้อและปรับสมดุลร่างกายด้วยท่านวดดั้งเดิม</p>
+            <div class="service-price"><span class="dur">60 นาที</span><span class="price">฿300*</span></div>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img ph-img"><img src="https://picsum.photos/seed/ruensetthi-svc2/600/450" alt="นวดน้ำมันอโรมา (ภาพตัวอย่าง)" loading="lazy"></div>
+          <div class="service-body">
+            <h3>นวดน้ำมันอโรมา</h3>
+            <p>ผ่อนคลายลึกด้วยน้ำมันหอมระเหยธรรมชาติ</p>
+            <div class="service-price"><span class="dur">60 นาที</span><span class="price">฿450*</span></div>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img ph-img"><img src="https://picsum.photos/seed/ruensetthi-svc3/600/450" alt="นวดฝ่าเท้าสมุนไพร (ภาพตัวอย่าง)" loading="lazy"></div>
+          <div class="service-body">
+            <h3>นวดฝ่าเท้าสมุนไพร</h3>
+            <p>กระตุ้นการไหลเวียนโลหิตด้วยสมุนไพรไทย</p>
+            <div class="service-price"><span class="dur">45 นาที</span><span class="price">฿250*</span></div>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img ph-img"><img src="https://picsum.photos/seed/ruensetthi-svc4/600/450" alt="ประคบสมุนไพรร้อน (ภาพตัวอย่าง)" loading="lazy"></div>
+          <div class="service-body">
+            <h3>ประคบสมุนไพรร้อน</h3>
+            <p>บรรเทาอาการปวดเมื่อยด้วยลูกประคบสูตรโบราณ</p>
+            <div class="service-price"><span class="dur">60 นาที</span><span class="price">฿350*</span></div>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img ph-img"><img src="https://picsum.photos/seed/ruensetthi-svc5/600/450" alt="นวดหน้าผ่อนคลาย (ภาพตัวอย่าง)" loading="lazy"></div>
+          <div class="service-body">
+            <h3>นวดหน้าผ่อนคลาย</h3>
+            <p>กระชับผิวหน้า ลดความตึงเครียดบริเวณศีรษะ</p>
+            <div class="service-price"><span class="dur">30 นาที</span><span class="price">฿200*</span></div>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-img ph-img"><img src="https://picsum.photos/seed/ruensetthi-svc6/600/450" alt="คอร์สรวม นวดและประคบ (ภาพตัวอย่าง)" loading="lazy"></div>
+          <div class="service-body">
+            <h3>คอร์สรวม (นวด+ประคบ)</h3>
+            <p>คอร์สยอดนิยม ผ่อนคลายครบทุกส่วน</p>
+            <div class="service-price"><span class="dur">120 นาที</span><span class="price">฿650*</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="price-note">*ราคาตัวอย่างสำหรับจำลองหน้าเว็บเท่านั้น ไม่ใช่ราคาจริง</p>
+    </div>
+  </section>
+
+  <!-- BRANCHES -->
+  <section id="branches">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kranok">
+          <span class="line"></span>
+          <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 3c-5 5-9 7-9 13a9 9 0 0018 0c0-6-4-8-9-13z" stroke="currentColor" stroke-width="1"/></svg>
+          <span class="line"></span>
+        </div>
+        <span class="section-eyebrow">สาขาของเรา</span>
+        <h2>2 สาขา พร้อมให้บริการในโคราช</h2>
+      </div>
+      <div class="branch-grid">
+        <article class="branch-card">
+          <span class="branch-tag">สาขา 1</span>
+          <h3>สาขาบ้านใหม่ (ใกล้เซฟวันโคราช)</h3>
+          <div class="branch-photo ph-img"><img src="https://picsum.photos/seed/ruensetthi-branch1/900/600" alt="หน้าร้านสาขาบ้านใหม่ (ภาพตัวอย่าง)" loading="lazy"></div>
+          <div class="branch-info">
+            <div><svg style="color:var(--gold)" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 15s5-4.5 5-8.5A5 5 0 003 6.5C3 10.5 8 15 8 15z" stroke="currentColor" stroke-width="1.2"/></svg> ตำบลบ้านใหม่ อำเภอเมืองนครราชสีมา ใกล้เซฟวันโคราช <em>(ที่อยู่ตัวอย่าง รอที่อยู่จริง)</em></div>
+            <div><svg style="color:var(--gold)" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.2"/><path d="M8 4.5V8l3 2" stroke="currentColor" stroke-width="1.2"/></svg> เปิดทุกวัน 10:00–22:00 น.</div>
+            <div><svg style="color:var(--gold)" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 3.5c0 6 3.5 9.5 9.5 9.5l1.5-3-3.5-1.5-1 1.5c-1.5-.7-2.8-2-3.5-3.5l1.5-1L6 2 3 3.5z" stroke="currentColor" stroke-width="1.1"/></svg> 044-000-001 (ตัวอย่าง)</div>
+          </div>
+          <div class="branch-map">แผนที่ Google Maps — สาขาบ้านใหม่</div>
+        </article>
+        <article class="branch-card">
+          <span class="branch-tag">สาขา 2</span>
+          <h3>สาขา 2 (ตัวอย่าง — รอชื่อ/ที่อยู่จริง)</h3>
+          <div class="branch-photo ph-img"><img src="https://picsum.photos/seed/ruensetthi-branch2/900/600" alt="หน้าร้านสาขา 2 (ภาพตัวอย่าง)" loading="lazy"></div>
+          <div class="branch-info">
+            <div><svg style="color:var(--gold)" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 15s5-4.5 5-8.5A5 5 0 003 6.5C3 10.5 8 15 8 15z" stroke="currentColor" stroke-width="1.2"/></svg> อำเภอเมืองนครราชสีมา <em>(ที่อยู่ตัวอย่าง รอที่อยู่จริง)</em></div>
+            <div><svg style="color:var(--gold)" width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.2"/><path d="M8 4.5V8l3 2" stroke="currentColor" stroke-width="1.2"/></svg> เปิดทุกวัน 10:00–22:00 น.</div>
+            <div><svg style="color:var(--gold)" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 3.5c0 6 3.5 9.5 9.5 9.5l1.5-3-3.5-1.5-1 1.5c-1.5-.7-2.8-2-3.5-3.5l1.5-1L6 2 3 3.5z" stroke="currentColor" stroke-width="1.1"/></svg> 044-000-002 (ตัวอย่าง)</div>
+          </div>
+          <div class="branch-map">แผนที่ Google Maps — สาขา 2</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="reviews" class="testi">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">เสียงจากลูกค้า</span>
+        <h2>ความประทับใจ (ตัวอย่าง)</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">บรรยากาศดีมาก หมอนวดมือหนักแน่นได้ที่ ไปใช้บริการประจำเลยค่ะ</p>
+          <div class="testi-who"><span class="testi-avatar">ก</span> คุณกานดา, ลูกค้าประจำ</div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">สาขาใกล้เซฟวันสะดวกมาก จอดรถง่าย พนักงานสุภาพเป็นกันเอง</p>
+          <div class="testi-who"><span class="testi-avatar">ส</span> คุณสมชาย, ลูกค้าประจำ</div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">นวดแผนไทยที่นี่แน่นและตรงจุดมาก ราคาคุ้มค่ากับคุณภาพ</p>
+          <div class="testi-who"><span class="testi-avatar">น</span> คุณนภา, ลูกค้าใหม่</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="wrap">
+      <div class="kranok" style="margin-bottom:24px;">
+        <span class="line"></span>
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M13 3c-5 5-9 7-9 13a9 9 0 0018 0c0-6-4-8-9-13z" stroke="currentColor" stroke-width="1"/></svg>
+        <span class="line"></span>
+      </div>
+      <h2>ให้เรือนเศรษฐีดูแลความผ่อนคลายของคุณ</h2>
+      <p>จองคิวล่วงหน้าผ่านโทรศัพท์หรือ Line เพื่อความสะดวกในการเข้ารับบริการ</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="tel:+6644000000">โทรจองคิว 044-000-000</a>
+        <a class="btn btn-ghost" href="#">แอด Line (ตัวอย่าง)</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand-name">เรือนเศรษฐีนวดเพื่อสุขภาพ</div>
+        <p>นวดแผนไทยแท้ เพื่อสุขภาพและการผ่อนคลายอย่างแท้จริง ให้บริการชาวโคราชมายาวนาน 2 สาขา</p>
+      </div>
+      <div class="foot-col">
+        <h4>เมนู</h4>
+        <ul>
+          <li><a href="#about">เกี่ยวกับเรา</a></li>
+          <li><a href="#services">บริการ</a></li>
+          <li><a href="#branches">สาขา</a></li>
+          <li><a href="#reviews">รีวิว</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>สาขา</h4>
+        <ul>
+          <li><a href="#branches">บ้านใหม่ (ใกล้เซฟวันโคราช)</a></li>
+          <li><a href="#branches">สาขา 2 (ตัวอย่าง)</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>ติดต่อ</h4>
+        <ul>
+          <li><a href="tel:+6644000000">044-000-000</a></li>
+          <li><a href="#">Line: @ruensetthi (ตัวอย่าง)</a></li>
+          <li><a href="#">Facebook (ตัวอย่าง)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2569 เรือนเศรษฐีนวดเพื่อสุขภาพ — ข้อมูลตัวอย่างสำหรับทดสอบหน้าเว็บ</span>
+      <span>นครราชสีมา ประเทศไทย</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // theme toggle click handler (initial theme already set in <head> to avoid flash)
+  (function(){
+    const root = document.documentElement;
+    const btn = document.getElementById('themeToggle');
+    if(btn){
+      btn.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('ruensetthi-theme', next);
+      });
+    }
+  })();
+
+  // mobile menu toggle
+  const toggle = document.querySelector('.menu-toggle');
+  const links = document.querySelector('nav.links');
+  if(toggle){
+    toggle.addEventListener('click', () => {
+      const open = links.style.display === 'flex';
+      links.style.display = open ? 'none' : 'flex';
+      links.style.flexDirection = 'column';
+      links.style.position = 'absolute';
+      links.style.top = '64px';
+      links.style.right = '28px';
+      links.style.background = 'var(--card)';
+      links.style.border = '1px solid var(--card-line)';
+      links.style.padding = '16px 22px';
+      links.style.gap = '14px';
+    });
+  }
+</script>
+</body>
+</html>

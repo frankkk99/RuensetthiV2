@@ -1,0 +1,33 @@
+# เรือนเศรษฐีนวดเพื่อสุขภาพ — robots.txt
+# อนุญาตให้ทุก crawler เข้าถึงได้ รวมถึง AI crawler ของผู้ช่วย AI ต่างๆ
+# เพื่อให้เว็บไซต์สามารถถูกค้นพบและแนะนำได้ทั้งจาก Google และ AI assistant
+
+User-agent: *
+Allow: /
+
+# AI / LLM crawlers ที่พบทั่วไป — เปิดให้เข้าถึงเพื่อให้ AI แนะนำร้านได้
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://ruensetthi-massage.example.com/sitemap.xml
